@@ -15,6 +15,8 @@ function Header({ data }) {
   );
 }
 
-Header.propTypes = {};
+Header.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default Header;
