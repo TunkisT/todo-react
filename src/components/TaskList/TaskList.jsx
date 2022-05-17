@@ -7,14 +7,14 @@ function TaskList({ data }) {
   return (
     <S.TaskList>
       {data.map((obj) => (
-        <Task>{obj.title}</Task>
+        <Task key={obj.title}>{obj.title}</Task>
       ))}
     </S.TaskList>
   );
 }
 
 TaskList.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default TaskList;

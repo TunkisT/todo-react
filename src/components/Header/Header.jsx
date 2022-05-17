@@ -8,7 +8,9 @@ function Header({ data }) {
       <h2>ToDo app</h2>
       <S.Navigation>
         {data.map((obj) => (
-          <S.Link href={obj.link}>{obj.title}</S.Link>
+          <S.Link key={obj.title} to={obj.link}>
+            {obj.title}
+          </S.Link>
         ))}
       </S.Navigation>
     </S.Header>
@@ -16,7 +18,7 @@ function Header({ data }) {
 }
 
 Header.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default Header;
