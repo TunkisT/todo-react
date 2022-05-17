@@ -8,6 +8,7 @@ export const Label = styled.label`
   margin-left: 1rem;
 `;
 export const Input = styled.input`
+  background: inherit;
   border: 0;
   border-bottom: 1px solid grey;
   display: block;

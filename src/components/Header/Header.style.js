@@ -11,7 +11,10 @@ export const Header = styled.header`
   padding: 0 5rem;
 `;
 
-export const Navigation = styled.nav``;
+export const Navigation = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export const Link = styled(NavLink)`
   background: #cfd1d0;
