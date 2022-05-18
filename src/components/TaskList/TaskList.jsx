@@ -7,7 +7,7 @@ function TaskList({ data }) {
   return (
     <S.TaskList>
       {data.map((obj) => (
-        <Task key={obj.title}>{obj.title}</Task>
+        <Task key={obj.id}>{obj.description}</Task>
       ))}
     </S.TaskList>
   );

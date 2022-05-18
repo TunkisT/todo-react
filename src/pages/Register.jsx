@@ -10,7 +10,7 @@ const Register = () => {
   const registerData = { email, password };
 
   async function fetchLogin() {
-    const res = await fetch(`http://localhost:4000/register`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import Button from '../components/Button/Button';
 import Input from '../components/Input/Input';
 import Section from '../components/Section/Section';
-console.log(
-  'process.env.REACT_APP_SERVER_URL ===',
-  process.env.REACT_APP_SERVER_URL
-);
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -14,15 +10,18 @@ const Login = () => {
   const loginData = { email, password };
 
   async function fetchLogin() {
-    const res = await fetch(`http://localhost:4000/login`, {
+    const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(loginData),
     });
-    const data = await res.json();
-    console.log(data);
+    const respInJs = await res.json();
+    console.log(respInJs);
+    if (respInJs.success) {
+      localStorage.setItem('login_token', respInJs.data);
+    }
   }
 
   function formHandler(e) {
